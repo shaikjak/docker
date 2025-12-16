@@ -3,35 +3,40 @@ pipeline {
         label "AGENT-1"
 
     }
-    enviroment {
-        Greeetings = "Hello World"
+    environment {
+        Greetings = "Hello World"
     }
     parameters {
 
     }
     options {
-        timeout(time: 30 , unit: MINUTES)
+        timeout(time: 30 , unit: 'MINUTES')
     }
     stages{
-        stage 'git clone' {
-            sh " clone the repo"
-
+        stage ( 'git clone' ) {
+            steps{
+                sh " clone the repo"
+            }
         }
-        stage 'build' {
-            sh " build the package"
-
+        stage ( 'build' ) {
+            steps{
+                sh " build the package"
+            }
         }
-        stage 'artifact' {
-            sh " generate the artifcat"
-
+        stage ( 'artifact' ) {
+            steps{
+                sh " generate the artifcat"
+            }
         }
-        stage 'docker Image' {
-            sh " build the image"
-
+        stage ( 'docker Image' ) {
+            steps{
+                sh " build the image"
+            }
         }
-        stage 'deploy' {
-            sh " deply the image"
-
+        stage ( 'deploy' ) {
+            steps{
+                sh " deply the image"
+            }
         }
     }
 }
