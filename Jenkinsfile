@@ -1,5 +1,6 @@
 pipeline {
     agent {
+        label "AGENT-1"
 
     }
     enviroment {
