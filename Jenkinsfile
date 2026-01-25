@@ -11,7 +11,7 @@ pipeline {
 
     environment {
         appVersion = ""
-        nexusUrl = "NEXUS_URL_HERE"
+        nexusUrl = "http://54.91.24.69:8081/"
     }
 
     parameters {
@@ -74,28 +74,28 @@ pipeline {
             }
         }
 
-        // stage('Upload Artifact') {
-        //     steps {
-        //         script {
-        //             nexusArtifactUploader(
-        //                 nexusVersion: 'nexus3',
-        //                 protocol: 'http',
-        //                 nexusUrl: nexusUrl,
-        //                 groupId: 'com.expense',
-        //                 version: appVersion,
-        //                 repository: 'backend',
-        //                 credentialsId: 'nexus-auth',
-        //                 artifacts: [
-        //                     [
-        //                         artifactId: 'backend',
-        //                         classifier: '',
-        //                         file: "backend-${appVersion}.zip",
-        //                         type: 'zip'
-        //                     ]
-        //                 ]
-        //             )
-        //         }
-        //     }
-        // }
+        stage('Upload Artifact') {
+            steps {
+                script {
+                    nexusArtifactUploader(
+                        nexusVersion: 'nexus3',
+                        protocol: 'http',
+                        nexusUrl: http://54.91.24.69:8081/,
+                        groupId: 'com.expense',
+                        version: appVersion,
+                        repository: 'backend',
+                        credentialsId: 'nexus-auth',
+                        artifacts: [
+                            [
+                                artifactId: 'backend',
+                                classifier: '',
+                                file: "backend-${appVersion}.zip",
+                                type: 'zip'
+                            ]
+                        ]
+                    )
+                }
+            }
+        }
     }
 }
