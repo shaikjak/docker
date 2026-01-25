@@ -68,28 +68,28 @@ pipeline {
             }
         }
 
-        stage('Upload Artifact') {
-            steps {
-                script {
-                    nexusArtifactUploader(
-                        nexusVersion: 'nexus3',
-                        protocol: 'http',
-                        nexusUrl: nexusUrl,
-                        groupId: 'com.expense',
-                        version: appVersion,
-                        repository: 'backend',
-                        credentialsId: 'nexus-auth',
-                        artifacts: [
-                            [
-                                artifactId: 'backend',
-                                classifier: '',
-                                file: "backend-${appVersion}.zip",
-                                type: 'zip'
-                            ]
-                        ]
-                    )
-                }
-            }
-        }
+        // stage('Upload Artifact') {
+        //     steps {
+        //         script {
+        //             nexusArtifactUploader(
+        //                 nexusVersion: 'nexus3',
+        //                 protocol: 'http',
+        //                 nexusUrl: nexusUrl,
+        //                 groupId: 'com.expense',
+        //                 version: appVersion,
+        //                 repository: 'backend',
+        //                 credentialsId: 'nexus-auth',
+        //                 artifacts: [
+        //                     [
+        //                         artifactId: 'backend',
+        //                         classifier: '',
+        //                         file: "backend-${appVersion}.zip",
+        //                         type: 'zip'
+        //                     ]
+        //                 ]
+        //             )
+        //         }
+        //     }
+        // }
     }
 }
