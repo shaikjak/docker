@@ -9,7 +9,8 @@ RUN apt-get update && \
     apt-get install -y nginx && \
     rm -rf /var/lib/apt/lists/*
 
-COPY index.html /usr/share/nginx/html/index.html
+# Copy full website (HTML + assets + images)
+COPY index.html /var/www/html/
 
 EXPOSE 80
 
