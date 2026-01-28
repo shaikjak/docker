@@ -11,6 +11,7 @@ RUN apt-get update
 COPY index.html /var/www/html/
 ADD sample-1.tar /tmp/
 
-EXPOSE 80
+EXPOSE 8083
 
-CMD ["sleep", "60"]
+CMD ["google.com"]
+ENTRYPOINT ["ping", "-C5"]
