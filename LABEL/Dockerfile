@@ -8,4 +8,4 @@ RUN apt-get update && \
     apt-get clean
 
 ENTRYPOINT ["ping"]
-CMD ["-c", "5", "google.com"]
+
