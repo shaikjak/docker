@@ -1,7 +1,9 @@
 FROM ubuntu:20.04
 
-RUN apt-get update && \
-    apt-get install -y iputils-ping && \
-    apt-get clean
+ARG APP_NAME
+ARG VERSION=1.0
 
-ENTRYPOINT ["ping", "google.com"]
+RUN echo "App name is $APP_NAME" > /info.txt
+RUN echo "Version is $VERSION" >> /info.txt
+
+CMD ["cat", "/info.txt"]
