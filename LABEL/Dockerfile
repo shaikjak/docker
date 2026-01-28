@@ -5,9 +5,7 @@ LABEL course="Devops"
 
 ENV duration="100hrs"
 
-RUN apt-get update && \
-    apt-get install -y nginx && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update
 
 # Copy full website (HTML + assets + images)
 COPY index.html /var/www/html/
@@ -15,4 +13,4 @@ ADD "C:\Users\lenovo\Downloads\sample-1.tar" /tmp/
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["sleep", "-g", "60"]
