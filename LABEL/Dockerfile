@@ -13,4 +13,4 @@ ADD sample-1.tar /tmp/
 
 EXPOSE 80
 
-CMD ["sleep", "-g", "60"]
+CMD ["sleep", "60"]
